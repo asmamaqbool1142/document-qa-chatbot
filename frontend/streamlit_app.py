@@ -21,6 +21,33 @@ API_URL = os.getenv("API_URL", "http://localhost:8000")
 MIME_TYPES = {"pdf": "application/pdf", "txt": "text/plain"}
 
 st.set_page_config(page_title="RAG Knowledge Assistant", page_icon="📚", layout="wide")
+
+st.markdown(
+    """
+    <style>
+    :root { --kp-ink: #172033; --kp-muted: #64748b; --kp-line: #e6eaf2; --kp-purple: #625bf6; }
+    .stApp { background: linear-gradient(180deg, #f7f8ff 0%, #fbfcff 240px, #f8fafc 100%); }
+    [data-testid="stHeader"] { background: rgba(255,255,255,.72); }
+    [data-testid="stSidebar"] { background: #fff; border-right: 1px solid var(--kp-line); }
+    [data-testid="stSidebar"] > div:first-child { padding-top: 1.25rem; }
+    h1 { color: var(--kp-ink); letter-spacing: -1.4px; font-weight: 800 !important; }
+    h2, h3 { color: var(--kp-ink); letter-spacing: -.4px; }
+    [data-testid="stChatMessage"] { border: 1px solid var(--kp-line); border-radius: 16px; padding: 1rem 1.1rem; background: #fff; box-shadow: 0 5px 18px rgba(26,35,66,.035); }
+    [data-testid="stChatInput"] { border-radius: 16px; border-color: #dfe4f1; box-shadow: 0 8px 28px rgba(36,45,83,.06); background: #fff; }
+    [data-testid="stFileUploader"] { border: 1px dashed #b8b9f5; border-radius: 14px; background: #fafaff; padding: .35rem; }
+    .kp-eyebrow { color: var(--kp-purple); text-transform: uppercase; font-size: .72rem; letter-spacing: .14em; font-weight: 800; margin-bottom: .35rem; }
+    .kp-subtitle { color: var(--kp-muted); font-size: 1rem; line-height: 1.65; max-width: 760px; margin-bottom: 1.2rem; }
+    .kp-stat { background: #fff; border: 1px solid var(--kp-line); border-radius: 15px; padding: 1rem 1.1rem; min-height: 100px; box-shadow: 0 5px 18px rgba(26,35,66,.035); }
+    .kp-stat-label { color: var(--kp-muted); font-size: .78rem; font-weight: 650; margin-bottom: .45rem; }
+    .kp-stat-value { color: var(--kp-ink); font-size: 1.65rem; font-weight: 800; letter-spacing: -.05em; }
+    .kp-stat-note { color: #7c86a0; font-size: .72rem; margin-top: .2rem; }
+    div.stButton > button[kind="primary"] { border-radius: 10px; font-weight: 700; border: 0; box-shadow: 0 5px 14px rgba(98,91,246,.18); }
+    div[data-testid="stExpander"] { border-radius: 12px; border-color: var(--kp-line); background: #fff; }
+    @media (max-width: 700px) { .kp-stat { padding: .8rem; min-height: 90px; } .kp-stat-value { font-size: 1.35rem; } }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
 client = ApiClient(API_URL)
 
 ss = st.session_state
@@ -187,10 +214,42 @@ with st.sidebar:
             st.warning("Questions and retrieved excerpts are sent to an external LLM service.")
 
 # ------------------------------------------------------------------- main --
-st.title("RAG Knowledge Assistant")
+st.markdown('<div class="kp-eyebrow">Your private knowledge workspace</div>', unsafe_allow_html=True)
+st.title("Ask your documents. Get grounded answers.")
+st.markdown(
+    '<div class="kp-subtitle">Search across your PDFs and text files, explore the exact passages behind each answer, '
+    'and keep every response traceable to its source.</div>',
+    unsafe_allow_html=True,
+)
+
+doc_total = len(documents) if health else 0
+indexed_chunks = sum(int(d.get("chunk_count", 0)) for d in documents) if health else 0
+status_label = "Connected" if health else "Offline"
+status_color = "#0f9f78" if health else "#d97706"
+m1, m2, m3 = st.columns(3)
+with m1:
+    st.markdown(
+        f'<div class="kp-stat"><div class="kp-stat-label">📚 Indexed documents</div>'
+        f'<div class="kp-stat-value">{doc_total}</div><div class="kp-stat-note">Available in this workspace</div></div>',
+        unsafe_allow_html=True,
+    )
+with m2:
+    st.markdown(
+        f'<div class="kp-stat"><div class="kp-stat-label">🧩 Searchable passages</div>'
+        f'<div class="kp-stat-value">{indexed_chunks:,}</div><div class="kp-stat-note">Chunks available for retrieval</div></div>',
+        unsafe_allow_html=True,
+    )
+with m3:
+    st.markdown(
+        f'<div class="kp-stat"><div class="kp-stat-label">● Backend status</div>'
+        f'<div class="kp-stat-value" style="font-size:1.45rem;color:{status_color}">{status_label}</div>'
+        f'<div class="kp-stat-note">Live status from the API health check</div></div>',
+        unsafe_allow_html=True,
+    )
+st.write("")
 st.caption(
-    "Answers are generated only from your uploaded documents, with sources. "
-    "Always check the cited passages: automated answers can still be wrong."
+    "Answers are grounded in retrieved passages, but automated responses can still be wrong. "
+    "Open the citations and verify the original text before relying on important information."
 )
 
 for msg in ss.messages:
