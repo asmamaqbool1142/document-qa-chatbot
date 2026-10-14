@@ -1,0 +1,62 @@
+# Start:   docker compose up --build
+# With a bundled Ollama container:  docker compose --profile ollama up --build
+#   (then set OLLAMA_BASE_URL=http://ollama:11434 in .env and pull a model, see README)
+
+services:
+  backend:
+    build: .
+    image: rag-knowledge-assistant:latest
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DATA_DIR: /app/storage          # persistent volume, separate from bundled samples
+      # Inside a container "localhost" is the container itself, so Docker uses its own
+      # variable. Default: Ollama on the host. Bundled container: http://ollama:11434
+      OLLAMA_BASE_URL: ${DOCKER_OLLAMA_BASE_URL:-http://host.docker.internal:11434}
+      CORS_ORIGINS: '["http://localhost:8501"]'
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "8000:8000"
+    volumes:
+      - rag_data:/app/storage         # vector DB + registry (+ uploads if STORE_UPLOADS=true)
+      - model_cache:/app/.cache       # downloaded embedding model, survives rebuilds
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=5)"]
+      interval: 15s
+      timeout: 6s
+      retries: 5
+      start_period: 120s              # first start downloads the embedding model
+    restart: unless-stopped
+
+  frontend:
+    image: rag-knowledge-assistant:latest
+    command: ["streamlit", "run", "frontend/streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+    environment:
+      API_URL: http://backend:8000    # service name on the compose network
+    ports:
+      - "8501:8501"
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8501/_stcore/health', timeout=5)"]
+      interval: 30s
+      timeout: 6s
+      retries: 3
+    restart: unless-stopped
+
+  ollama:
+    image: ollama/ollama:latest
+    profiles: ["ollama"]
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_models:/root/.ollama
+
+volumes:
+  rag_data:
+  model_cache:
+  ollama_models:

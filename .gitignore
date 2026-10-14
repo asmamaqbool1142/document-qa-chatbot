@@ -1,0 +1,34 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# User data: uploaded documents, vector DB, registry
+data/uploads/*
+!data/uploads/.gitkeep
+data/chroma/*
+!data/chroma/.gitkeep
+data/registry.sqlite3*
+
+# Generated reports (the one referenced by the README lives in docs/)
+reports/
+
+# Python / tooling caches
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+*.egg-info/
+build/
+dist/
+
+# Model caches and editors
+.cache/
+.idea/
+.vscode/
+.DS_Store

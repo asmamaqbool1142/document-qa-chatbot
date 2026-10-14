@@ -1,0 +1,16 @@
+# Runtime dependencies, pinned to the versions current on 2026-10-13 (Python 3.11).
+# All were installed and tested except sentence-transformers/torch, whose API was
+# checked against the 6.1.0 source but not run (model downloads were blocked).
+# For a CPU-only machine, install PyTorch first to avoid the large CUDA build:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+fastapi==0.143.0
+uvicorn[standard]==0.54.0
+python-multipart==0.0.32
+pydantic==2.14.1
+pydantic-settings==2.15.0
+python-dotenv==1.2.4
+httpx==0.28.1
+pymupdf==1.28.2
+chromadb==1.5.9
+sentence-transformers==6.1.0
+streamlit==1.65.0

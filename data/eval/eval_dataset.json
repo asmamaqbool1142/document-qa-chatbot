@@ -1,0 +1,166 @@
+{
+  "name": "rag-knowledge-assistant-sample-eval",
+  "version": 1,
+  "description": "Hand-written questions over the three fictional sample documents in data/samples. A retrieved chunk counts as relevant when it comes from the expected file (and page, for PDFs) and contains the expected evidence text.",
+  "documents": [
+    "aquapure_w300_manual.pdf",
+    "northwind_employee_handbook.txt",
+    "project_helios_status_report.txt"
+  ],
+  "cases": [
+    {
+      "id": "q01", "category": "numeric",
+      "question": "What is the maximum flow rate of the AquaPure W300?",
+      "answerable": true,
+      "evidence": [{"file": "aquapure_w300_manual.pdf", "page": 1, "contains": "2.5 litres per minute"}],
+      "answer_must_contain": ["2.5"]
+    },
+    {
+      "id": "q02", "category": "numeric",
+      "question": "How often should the reverse osmosis membrane be replaced?",
+      "answerable": true,
+      "evidence": [{"file": "aquapure_w300_manual.pdf", "page": 3, "contains": "every 24 months"}],
+      "answer_must_contain": ["24 months"]
+    },
+    {
+      "id": "q03", "category": "numeric",
+      "question": "How long is the standard warranty on the AquaPure W300, and how long is the storage tank covered?",
+      "answerable": true,
+      "evidence": [{"file": "aquapure_w300_manual.pdf", "page": 5, "contains": "for 2 years from the date of purchase"},
+                   {"file": "aquapure_w300_manual.pdf", "page": 5, "contains": "covered for 5 years"}],
+      "answer_must_contain": ["2 years", "5 years"]
+    },
+    {
+      "id": "q04", "category": "factual",
+      "question": "What does error code E2 mean on the water purifier?",
+      "answerable": true,
+      "evidence": [{"file": "aquapure_w300_manual.pdf", "page": 4, "contains": "E2 - Leak detected"}],
+      "answer_must_contain": ["leak"]
+    },
+    {
+      "id": "q05", "category": "factual",
+      "question": "Why must the purifier never be connected to a hot-water supply?",
+      "answerable": true,
+      "evidence": [{"file": "aquapure_w300_manual.pdf", "page": 2, "contains": "permanently damages the RO membrane"}],
+      "answer_must_contain": ["membrane"]
+    },
+    {
+      "id": "q06", "category": "numeric",
+      "question": "How many days of paid annual leave do full-time employees get?",
+      "answerable": true,
+      "evidence": [{"file": "northwind_employee_handbook.txt", "page": null, "contains": "22 days of paid annual leave"}],
+      "answer_must_contain": ["22"]
+    },
+    {
+      "id": "q07", "category": "date",
+      "question": "By what date must carried-over annual leave days be used?",
+      "answerable": true,
+      "evidence": [{"file": "northwind_employee_handbook.txt", "page": null, "contains": "used by 31 March"}],
+      "answer_must_contain": ["31 March"]
+    },
+    {
+      "id": "q08", "category": "confusable",
+      "question": "How many weeks of parental leave do non-birth parents receive?",
+      "answerable": true,
+      "evidence": [{"file": "northwind_employee_handbook.txt", "page": null, "contains": "Non-birth parents and adoptive parents receive 6 weeks"}],
+      "answer_must_contain": ["6 weeks"]
+    },
+    {
+      "id": "q09", "category": "multi_section",
+      "question": "How many days per week can office staff work remotely, and how long is the probation period they must complete first?",
+      "answerable": true,
+      "evidence": [{"file": "northwind_employee_handbook.txt", "page": null, "contains": "up to 3 days per week"},
+                   {"file": "northwind_employee_handbook.txt", "page": null, "contains": "probation period of 90 days"}],
+      "answer_must_contain": ["3 days", "90 days"]
+    },
+    {
+      "id": "q10", "category": "numeric",
+      "question": "How often must employees change their passwords?",
+      "answerable": true,
+      "evidence": [{"file": "northwind_employee_handbook.txt", "page": null, "contains": "changed every 180 days"}],
+      "answer_must_contain": ["180 days"]
+    },
+    {
+      "id": "q11", "category": "confusable",
+      "question": "How much did Project Helios spend in Q3 2026?",
+      "answerable": true,
+      "evidence": [{"file": "project_helios_status_report.txt", "page": null, "contains": "Q3 spending was 740,000 euros"}],
+      "answer_must_contain": ["740,000"]
+    },
+    {
+      "id": "q12", "category": "confusable",
+      "question": "How much electricity did the Helios solar systems generate during Q2 2026?",
+      "answerable": true,
+      "evidence": [{"file": "project_helios_status_report.txt", "page": null, "contains": "1,450 megawatt-hours"}],
+      "answer_must_contain": ["1,450"]
+    },
+    {
+      "id": "q13", "category": "date",
+      "question": "When did Project Helios start, and what is its planned completion date?",
+      "answerable": true,
+      "evidence": [{"file": "project_helios_status_report.txt", "page": null, "contains": "started on 3 February 2025"},
+                   {"file": "project_helios_status_report.txt", "page": null, "contains": "completion date is 30 June 2027"}],
+      "answer_must_contain": ["3 February 2025", "30 June 2027"]
+    },
+    {
+      "id": "q14", "category": "multi_section",
+      "question": "Why was Project Helios over budget in the third quarter?",
+      "answerable": true,
+      "evidence": [{"file": "project_helios_status_report.txt", "page": null, "contains": "scaffolding delays in Hamburg"}],
+      "answer_must_contain": ["scaffolding"]
+    },
+    {
+      "id": "q15", "category": "confusable",
+      "question": "How long is the warranty on the Helios battery storage units?",
+      "answerable": true,
+      "evidence": [{"file": "project_helios_status_report.txt", "page": null, "contains": "10-year performance warranty"}],
+      "answer_must_contain": ["10"]
+    },
+    {
+      "id": "q16", "category": "date",
+      "question": "What happens if planning permission for the Madrid warehouse is not granted by 31 December 2026?",
+      "answerable": true,
+      "evidence": [{"file": "project_helios_status_report.txt", "page": null, "contains": "replaced by the Porto warehouse"}],
+      "answer_must_contain": ["Porto"]
+    },
+    {
+      "id": "q17", "category": "numeric",
+      "question": "What percentage of the approved Helios budget had been spent by 30 September 2026?",
+      "answerable": true,
+      "evidence": [{"file": "project_helios_status_report.txt", "page": null, "contains": "69 percent of the approved budget"}],
+      "answer_must_contain": ["69"]
+    },
+    {
+      "id": "q18", "category": "factual",
+      "question": "Which filter part number is the sediment pre-filter, and how often is it replaced?",
+      "answerable": true,
+      "evidence": [{"file": "aquapure_w300_manual.pdf", "page": 3, "contains": "Sediment pre-filter (part AP-S1): every 6 months"}],
+      "answer_must_contain": ["AP-S1", "6 months"]
+    },
+    {
+      "id": "u01", "category": "unanswerable",
+      "question": "What is the retail price of the AquaPure W300?",
+      "answerable": false, "evidence": [], "answer_must_contain": []
+    },
+    {
+      "id": "u02", "category": "unanswerable",
+      "question": "How many vacation days do part-time employees receive?",
+      "answerable": false, "evidence": [], "answer_must_contain": []
+    },
+    {
+      "id": "u03", "category": "unanswerable",
+      "question": "Who is the chief executive officer of Northwind Logistics?",
+      "answerable": false, "evidence": [], "answer_must_contain": []
+    },
+    {
+      "id": "u04", "category": "unanswerable",
+      "question": "How much did Project Helios spend in Q1 2026?",
+      "answerable": false, "evidence": [], "answer_must_contain": []
+    },
+    {
+      "id": "u05", "category": "unanswerable",
+      "question": "What is the capital city of Australia?",
+      "answerable": false, "evidence": [], "answer_must_contain": []
+    }
+  ]
+}

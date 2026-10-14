@@ -1,0 +1,47 @@
+[project]
+name = "rag-knowledge-assistant"
+version = "1.0.0"
+description = "Upload PDF/TXT documents and ask questions answered with cited sources (RAG)."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = [".venv", "data"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "S", "RUF", "N"]
+ignore = [
+    "S101",   # assert is fine in tests and for internal invariants
+    "S608",   # SQL built from constant column lists, values are parameterised
+    "B008",   # FastAPI's File()/Query() defaults are idiomatic
+    "RUF001", # we intentionally use typographic characters in UI text
+    "SIM905", # "a b c".split() is clearer than a long list literal for word lists
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S", "N802"]
+"scripts/*" = ["S"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.mypy]
+python_version = "3.11"
+files = ["app", "frontend"]
+strict = true
+ignore_missing_imports = true
+warn_unused_ignores = false
+disallow_untyped_decorators = false
+
+[[tool.mypy.overrides]]
+module = ["pymupdf.*", "chromadb.*", "sentence_transformers.*"]
+ignore_missing_imports = true
+
+[tool.coverage.run]
+source = ["app"]
+omit = ["app/evaluation/*"]

@@ -1,0 +1,1792 @@
+{
+  "generated_at": "2026-10-13T10:43:28+00:00",
+  "app_version": "1.0.0",
+  "python": "3.11.17",
+  "dataset": {
+    "name": "rag-knowledge-assistant-sample-eval",
+    "version": 1,
+    "sha256": "229dbcb91f58"
+  },
+  "config": {
+    "embedding_model": "hashing:v1:1024",
+    "llm_provider": "extractive",
+    "llm_model": "extractive-sentence-selection",
+    "top_k": 5,
+    "min_relevance_score": 0.12,
+    "chunk_size": 1000,
+    "chunk_overlap": 150,
+    "max_context_chars": 6000
+  },
+  "duration_seconds": 0.17,
+  "summary": {
+    "cases_total": 23,
+    "cases_answerable": 18,
+    "cases_unanswerable": 5,
+    "retrieval": {
+      "mrr": 0.9167,
+      "hit@1": 0.8333,
+      "hit@3": 1.0,
+      "hit@5": 1.0,
+      "evidence_recall@1": 0.8056,
+      "evidence_recall@3": 1.0,
+      "evidence_recall@5": 1.0
+    },
+    "abstention": {
+      "unanswerable_correctly_refused": 0.4,
+      "answerable_wrongly_refused": 0.1111
+    },
+    "answers": {
+      "answered_cases": 16,
+      "answer_contains_expected": 0.6875,
+      "citation_hit_rate": 0.9375,
+      "citation_precision": 0.7812,
+      "sentence_support_ratio": 1.0
+    },
+    "latency_ms": {
+      "median": 2,
+      "max": 5
+    },
+    "by_category": {
+      "confusable": {
+        "n": 4,
+        "hit@3": 1.0,
+        "mrr": 0.875,
+        "answered_and_correct": 0.75
+      },
+      "date": {
+        "n": 3,
+        "hit@3": 1.0,
+        "mrr": 1.0,
+        "answered_and_correct": 0.6667
+      },
+      "factual": {
+        "n": 3,
+        "hit@3": 1.0,
+        "mrr": 1.0,
+        "answered_and_correct": 0.6667
+      },
+      "multi_section": {
+        "n": 2,
+        "hit@3": 1.0,
+        "mrr": 0.75,
+        "answered_and_correct": 0.0
+      },
+      "numeric": {
+        "n": 6,
+        "hit@3": 1.0,
+        "mrr": 0.9167,
+        "answered_and_correct": 0.6667
+      },
+      "unanswerable": {
+        "n": 5,
+        "correctly_refused": 0.4
+      }
+    },
+    "threshold_used": 0.12,
+    "threshold_sweep_retrieval_only": [
+      {
+        "threshold": 0.0,
+        "answerable_pass": 1.0,
+        "unanswerable_blocked": 0.0
+      },
+      {
+        "threshold": 0.02,
+        "answerable_pass": 1.0,
+        "unanswerable_blocked": 0.0
+      },
+      {
+        "threshold": 0.04,
+        "answerable_pass": 1.0,
+        "unanswerable_blocked": 0.2
+      },
+      {
+        "threshold": 0.06,
+        "answerable_pass": 1.0,
+        "unanswerable_blocked": 0.2
+      },
+      {
+        "threshold": 0.08,
+        "answerable_pass": 1.0,
+        "unanswerable_blocked": 0.2
+      },
+      {
+        "threshold": 0.1,
+        "answerable_pass": 1.0,
+        "unanswerable_blocked": 0.2
+      },
+      {
+        "threshold": 0.12,
+        "answerable_pass": 1.0,
+        "unanswerable_blocked": 0.2
+      },
+      {
+        "threshold": 0.14,
+        "answerable_pass": 0.8889,
+        "unanswerable_blocked": 0.2
+      },
+      {
+        "threshold": 0.16,
+        "answerable_pass": 0.7778,
+        "unanswerable_blocked": 0.2
+      },
+      {
+        "threshold": 0.18,
+        "answerable_pass": 0.7778,
+        "unanswerable_blocked": 0.2
+      },
+      {
+        "threshold": 0.2,
+        "answerable_pass": 0.6667,
+        "unanswerable_blocked": 0.4
+      },
+      {
+        "threshold": 0.22,
+        "answerable_pass": 0.6111,
+        "unanswerable_blocked": 0.4
+      },
+      {
+        "threshold": 0.24,
+        "answerable_pass": 0.5556,
+        "unanswerable_blocked": 0.8
+      },
+      {
+        "threshold": 0.26,
+        "answerable_pass": 0.5,
+        "unanswerable_blocked": 1.0
+      },
+      {
+        "threshold": 0.28,
+        "answerable_pass": 0.3889,
+        "unanswerable_blocked": 1.0
+      },
+      {
+        "threshold": 0.3,
+        "answerable_pass": 0.2778,
+        "unanswerable_blocked": 1.0
+      },
+      {
+        "threshold": 0.32,
+        "answerable_pass": 0.2222,
+        "unanswerable_blocked": 1.0
+      },
+      {
+        "threshold": 0.34,
+        "answerable_pass": 0.1111,
+        "unanswerable_blocked": 1.0
+      },
+      {
+        "threshold": 0.36,
+        "answerable_pass": 0.1111,
+        "unanswerable_blocked": 1.0
+      },
+      {
+        "threshold": 0.38,
+        "answerable_pass": 0.0556,
+        "unanswerable_blocked": 1.0
+      },
+      {
+        "threshold": 0.4,
+        "answerable_pass": 0.0556,
+        "unanswerable_blocked": 1.0
+      },
+      {
+        "threshold": 0.42,
+        "answerable_pass": 0.0556,
+        "unanswerable_blocked": 1.0
+      },
+      {
+        "threshold": 0.44,
+        "answerable_pass": 0.0,
+        "unanswerable_blocked": 1.0
+      },
+      {
+        "threshold": 0.46,
+        "answerable_pass": 0.0,
+        "unanswerable_blocked": 1.0
+      },
+      {
+        "threshold": 0.48,
+        "answerable_pass": 0.0,
+        "unanswerable_blocked": 1.0
+      },
+      {
+        "threshold": 0.5,
+        "answerable_pass": 0.0,
+        "unanswerable_blocked": 1.0
+      },
+      {
+        "threshold": 0.52,
+        "answerable_pass": 0.0,
+        "unanswerable_blocked": 1.0
+      },
+      {
+        "threshold": 0.54,
+        "answerable_pass": 0.0,
+        "unanswerable_blocked": 1.0
+      },
+      {
+        "threshold": 0.56,
+        "answerable_pass": 0.0,
+        "unanswerable_blocked": 1.0
+      },
+      {
+        "threshold": 0.58,
+        "answerable_pass": 0.0,
+        "unanswerable_blocked": 1.0
+      },
+      {
+        "threshold": 0.6,
+        "answerable_pass": 0.0,
+        "unanswerable_blocked": 1.0
+      },
+      {
+        "threshold": 0.62,
+        "answerable_pass": 0.0,
+        "unanswerable_blocked": 1.0
+      },
+      {
+        "threshold": 0.64,
+        "answerable_pass": 0.0,
+        "unanswerable_blocked": 1.0
+      },
+      {
+        "threshold": 0.66,
+        "answerable_pass": 0.0,
+        "unanswerable_blocked": 1.0
+      },
+      {
+        "threshold": 0.68,
+        "answerable_pass": 0.0,
+        "unanswerable_blocked": 1.0
+      },
+      {
+        "threshold": 0.7,
+        "answerable_pass": 0.0,
+        "unanswerable_blocked": 1.0
+      },
+      {
+        "threshold": 0.72,
+        "answerable_pass": 0.0,
+        "unanswerable_blocked": 1.0
+      },
+      {
+        "threshold": 0.74,
+        "answerable_pass": 0.0,
+        "unanswerable_blocked": 1.0
+      },
+      {
+        "threshold": 0.76,
+        "answerable_pass": 0.0,
+        "unanswerable_blocked": 1.0
+      },
+      {
+        "threshold": 0.78,
+        "answerable_pass": 0.0,
+        "unanswerable_blocked": 1.0
+      },
+      {
+        "threshold": 0.8,
+        "answerable_pass": 0.0,
+        "unanswerable_blocked": 1.0
+      }
+    ]
+  },
+  "limitations": [
+    "Small, hand-written dataset (fictional documents, ~20 questions): results have wide uncertainty and do not generalise to other document collections.",
+    "Relevance is judged by exact evidence substrings in retrieved chunks; a chunk that paraphrases the evidence is counted as not relevant.",
+    "answer_contains_expected is keyword matching: a correct answer worded differently can fail, and a wrong answer that mentions the keyword can pass.",
+    "sentence_support_ratio is a lexical-overlap heuristic. It cannot detect contradictions, wrong reasoning, or claims that reuse source words with a different meaning.",
+    "In extractive mode the answer is copied from the sources, so support metrics are trivially high and say nothing about LLM faithfulness.",
+    "No LLM-as-a-judge is used. Even if added, such judgements are model opinions, not ground truth; manual review of the per-case details is still recommended.",
+    "LLM outputs can vary between runs and model versions; re-run before comparing numbers."
+  ],
+  "cases": [
+    {
+      "id": "q01",
+      "category": "numeric",
+      "question": "What is the maximum flow rate of the AquaPure W300?",
+      "answerable": true,
+      "status": "answered",
+      "answer": "- Maximum flow rate: 2.5 litres per minute. [S1]\n- AquaPure W300 Under-Sink Water Purifier - User Manual [S1]\n- Thank you for choosing the AquaPure W300, manufactured by Clearwater Appliances Ltd. [S1]",
+      "latency_ms": 3,
+      "top1_score": 0.2846,
+      "retrieved": [
+        {
+          "rank": 1,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 1,
+          "score": 0.2846,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 5,
+          "score": 0.1492,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 2,
+          "score": 0.1273,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 3,
+          "score": 0.0935,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 4,
+          "score": 0.0692,
+          "relevant": false
+        }
+      ],
+      "citations": [
+        {
+          "label": "S1",
+          "file": "aquapure_w300_manual.pdf",
+          "page": 1,
+          "chunk_id": "doc_b9a8c8eb7e42b289-00000"
+        }
+      ],
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit@1": true,
+      "evidence_recall@1": 1.0,
+      "hit@3": true,
+      "evidence_recall@3": 1.0,
+      "hit@5": true,
+      "evidence_recall@5": 1.0,
+      "answer_contains_expected": true,
+      "citation_hit": true,
+      "citation_precision": 1.0,
+      "sentence_support_ratio": 1.0
+    },
+    {
+      "id": "q02",
+      "category": "numeric",
+      "question": "How often should the reverse osmosis membrane be replaced?",
+      "answerable": true,
+      "status": "answered",
+      "answer": "- Stage 3 - Reverse osmosis membrane (part AP-RO3): every 24 months. [S1]",
+      "latency_ms": 2,
+      "top1_score": 0.1426,
+      "retrieved": [
+        {
+          "rank": 1,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 3,
+          "score": 0.1426,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 4,
+          "score": 0.1186,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 1,
+          "score": 0.1079,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 2,
+          "score": 0.0566,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "score": 0.0538,
+          "relevant": false
+        }
+      ],
+      "citations": [
+        {
+          "label": "S1",
+          "file": "aquapure_w300_manual.pdf",
+          "page": 3,
+          "chunk_id": "doc_b9a8c8eb7e42b289-00002"
+        }
+      ],
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit@1": true,
+      "evidence_recall@1": 1.0,
+      "hit@3": true,
+      "evidence_recall@3": 1.0,
+      "hit@5": true,
+      "evidence_recall@5": 1.0,
+      "answer_contains_expected": true,
+      "citation_hit": true,
+      "citation_precision": 1.0,
+      "sentence_support_ratio": 1.0
+    },
+    {
+      "id": "q03",
+      "category": "numeric",
+      "question": "How long is the standard warranty on the AquaPure W300, and how long is the storage tank covered?",
+      "answerable": true,
+      "status": "answered",
+      "answer": "- The stainless-steel storage tank is covered for 5 years. [S1]",
+      "latency_ms": 2,
+      "top1_score": 0.203,
+      "retrieved": [
+        {
+          "rank": 1,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 5,
+          "score": 0.203,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 1,
+          "score": 0.1859,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 2,
+          "score": 0.1143,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 3,
+          "score": 0.0967,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 4,
+          "score": 0.0897,
+          "relevant": false
+        }
+      ],
+      "citations": [
+        {
+          "label": "S1",
+          "file": "aquapure_w300_manual.pdf",
+          "page": 5,
+          "chunk_id": "doc_b9a8c8eb7e42b289-00004"
+        }
+      ],
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit@1": true,
+      "evidence_recall@1": 1.0,
+      "hit@3": true,
+      "evidence_recall@3": 1.0,
+      "hit@5": true,
+      "evidence_recall@5": 1.0,
+      "answer_contains_expected": false,
+      "citation_hit": true,
+      "citation_precision": 1.0,
+      "sentence_support_ratio": 1.0
+    },
+    {
+      "id": "q04",
+      "category": "factual",
+      "question": "What does error code E2 mean on the water purifier?",
+      "answerable": true,
+      "status": "insufficient_evidence",
+      "answer": "I couldn't find enough information in the uploaded documents to answer this question.",
+      "latency_ms": 2,
+      "top1_score": 0.1328,
+      "retrieved": [
+        {
+          "rank": 1,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 4,
+          "score": 0.1328,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 1,
+          "score": 0.1293,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 2,
+          "score": 0.1077,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 3,
+          "score": 0.0309,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "score": 0.0078,
+          "relevant": false
+        }
+      ],
+      "citations": [],
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit@1": true,
+      "evidence_recall@1": 1.0,
+      "hit@3": true,
+      "evidence_recall@3": 1.0,
+      "hit@5": true,
+      "evidence_recall@5": 1.0
+    },
+    {
+      "id": "q05",
+      "category": "factual",
+      "question": "Why must the purifier never be connected to a hot-water supply?",
+      "answerable": true,
+      "status": "answered",
+      "answer": "- Connect the feed adapter to the cold-water line only; never connect the unit to a hot-water supply, because water above 38 degrees Celsius permanently damages the RO membrane. [S1]\n- Before you start, close the cold-water supply valve and disconnect the purifier from power. [S1]",
+      "latency_ms": 2,
+      "top1_score": 0.2726,
+      "retrieved": [
+        {
+          "rank": 1,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 2,
+          "score": 0.2726,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.1981,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 1,
+          "score": 0.1517,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 3,
+          "score": 0.1082,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.1082,
+          "relevant": false
+        }
+      ],
+      "citations": [
+        {
+          "label": "S1",
+          "file": "aquapure_w300_manual.pdf",
+          "page": 2,
+          "chunk_id": "doc_b9a8c8eb7e42b289-00001"
+        }
+      ],
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit@1": true,
+      "evidence_recall@1": 1.0,
+      "hit@3": true,
+      "evidence_recall@3": 1.0,
+      "hit@5": true,
+      "evidence_recall@5": 1.0,
+      "answer_contains_expected": true,
+      "citation_hit": true,
+      "citation_precision": 1.0,
+      "sentence_support_ratio": 1.0
+    },
+    {
+      "id": "q06",
+      "category": "numeric",
+      "question": "How many days of paid annual leave do full-time employees get?",
+      "answerable": true,
+      "status": "answered",
+      "answer": "- Full-time employees receive 22 days of paid annual leave per calendar year, plus public holidays. [S1]",
+      "latency_ms": 2,
+      "top1_score": 0.3742,
+      "retrieved": [
+        {
+          "rank": 1,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.3742,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.2535,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.1516,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.0776,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 2,
+          "score": 0.0494,
+          "relevant": false
+        }
+      ],
+      "citations": [
+        {
+          "label": "S1",
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "chunk_id": "doc_e95cd9614bdf8dac-00001"
+        }
+      ],
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit@1": true,
+      "evidence_recall@1": 1.0,
+      "hit@3": true,
+      "evidence_recall@3": 1.0,
+      "hit@5": true,
+      "evidence_recall@5": 1.0,
+      "answer_contains_expected": true,
+      "citation_hit": true,
+      "citation_precision": 1.0,
+      "sentence_support_ratio": 1.0
+    },
+    {
+      "id": "q07",
+      "category": "date",
+      "question": "By what date must carried-over annual leave days be used?",
+      "answerable": true,
+      "status": "answered",
+      "answer": "- Up to 5 unused days may be carried over into the next year, but carried-over days must be used by 31 March or they are lost. [S1]\n- Full-time employees receive 22 days of paid annual leave per calendar year, plus public holidays. [S1]",
+      "latency_ms": 2,
+      "top1_score": 0.3219,
+      "retrieved": [
+        {
+          "rank": 1,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.3219,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.2429,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.192,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.1307,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 5,
+          "score": 0.0987,
+          "relevant": false
+        }
+      ],
+      "citations": [
+        {
+          "label": "S1",
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "chunk_id": "doc_e95cd9614bdf8dac-00001"
+        }
+      ],
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit@1": true,
+      "evidence_recall@1": 1.0,
+      "hit@3": true,
+      "evidence_recall@3": 1.0,
+      "hit@5": true,
+      "evidence_recall@5": 1.0,
+      "answer_contains_expected": true,
+      "citation_hit": true,
+      "citation_precision": 1.0,
+      "sentence_support_ratio": 1.0
+    },
+    {
+      "id": "q08",
+      "category": "confusable",
+      "question": "How many weeks of parental leave do non-birth parents receive?",
+      "answerable": true,
+      "status": "answered",
+      "answer": "- Birth parents are entitled to 16 weeks of parental leave at full pay. [S1]\n- Non-birth parents and adoptive parents receive 6 weeks at full pay. [S1]\n- Parental leave can start up to 2 weeks before the expected due date. [S1]",
+      "latency_ms": 2,
+      "top1_score": 0.4337,
+      "retrieved": [
+        {
+          "rank": 1,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.4337,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.1183,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "score": 0.0468,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.0415,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.0394,
+          "relevant": false
+        }
+      ],
+      "citations": [
+        {
+          "label": "S1",
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "chunk_id": "doc_e95cd9614bdf8dac-00002"
+        }
+      ],
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit@1": true,
+      "evidence_recall@1": 1.0,
+      "hit@3": true,
+      "evidence_recall@3": 1.0,
+      "hit@5": true,
+      "evidence_recall@5": 1.0,
+      "answer_contains_expected": true,
+      "citation_hit": true,
+      "citation_precision": 1.0,
+      "sentence_support_ratio": 1.0
+    },
+    {
+      "id": "q09",
+      "category": "multi_section",
+      "question": "How many days per week can office staff work remotely, and how long is the probation period they must complete first?",
+      "answerable": true,
+      "status": "answered",
+      "answer": "- Employees in office-based roles may work remotely for up to 3 days per week after completing their probation period. [S1]",
+      "latency_ms": 4,
+      "top1_score": 0.3016,
+      "retrieved": [
+        {
+          "rank": 1,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.3016,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.2627,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.125,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.063,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 5,
+          "score": 0.0577,
+          "relevant": false
+        }
+      ],
+      "citations": [
+        {
+          "label": "S1",
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "chunk_id": "doc_e95cd9614bdf8dac-00000"
+        }
+      ],
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit@1": true,
+      "evidence_recall@1": 0.5,
+      "hit@3": true,
+      "evidence_recall@3": 1.0,
+      "hit@5": true,
+      "evidence_recall@5": 1.0,
+      "answer_contains_expected": false,
+      "citation_hit": true,
+      "citation_precision": 1.0,
+      "sentence_support_ratio": 1.0
+    },
+    {
+      "id": "q10",
+      "category": "numeric",
+      "question": "How often must employees change their passwords?",
+      "answerable": true,
+      "status": "answered",
+      "answer": "- Passwords must be at least 14 characters long and must be changed every 180 days. [S2]\n- Employees working remotely must use the company VPN and must not work from public Wi-Fi networks without it. [S3]",
+      "latency_ms": 5,
+      "top1_score": 0.1543,
+      "retrieved": [
+        {
+          "rank": 1,
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "score": 0.1543,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.1256,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.1229,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.1116,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.1054,
+          "relevant": false
+        }
+      ],
+      "citations": [
+        {
+          "label": "S2",
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "chunk_id": "doc_e95cd9614bdf8dac-00003"
+        },
+        {
+          "label": "S3",
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "chunk_id": "doc_e95cd9614bdf8dac-00000"
+        }
+      ],
+      "first_relevant_rank": 2,
+      "reciprocal_rank": 0.5,
+      "hit@1": false,
+      "evidence_recall@1": 0.0,
+      "hit@3": true,
+      "evidence_recall@3": 1.0,
+      "hit@5": true,
+      "evidence_recall@5": 1.0,
+      "answer_contains_expected": true,
+      "citation_hit": true,
+      "citation_precision": 0.5,
+      "sentence_support_ratio": 1.0
+    },
+    {
+      "id": "q11",
+      "category": "confusable",
+      "question": "How much did Project Helios spend in Q3 2026?",
+      "answerable": true,
+      "status": "insufficient_evidence",
+      "answer": "I couldn't find enough information in the uploaded documents to answer this question.",
+      "latency_ms": 3,
+      "top1_score": 0.2543,
+      "retrieved": [
+        {
+          "rank": 1,
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "score": 0.2543,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "score": 0.1239,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "score": 0.1011,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.0868,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 1,
+          "score": 0.0588,
+          "relevant": false
+        }
+      ],
+      "citations": [],
+      "first_relevant_rank": 2,
+      "reciprocal_rank": 0.5,
+      "hit@1": false,
+      "evidence_recall@1": 0.0,
+      "hit@3": true,
+      "evidence_recall@3": 1.0,
+      "hit@5": true,
+      "evidence_recall@5": 1.0
+    },
+    {
+      "id": "q12",
+      "category": "confusable",
+      "question": "How much electricity did the Helios solar systems generate during Q2 2026?",
+      "answerable": true,
+      "status": "answered",
+      "answer": "- Project Helios installs rooftop solar panels and battery storage at Northwind Logistics warehouses to cut grid electricity costs. [S1]\n- The installed systems generated 1,450 megawatt-hours (MWh) of electricity during Q2 and avoided an estimated 520 tonnes of CO2 emissions. [S1]\n- By 30 September 2026, solar systems were operating at 9 of the 14 warehouses in scope. [S2]",
+      "latency_ms": 2,
+      "top1_score": 0.2892,
+      "retrieved": [
+        {
+          "rank": 1,
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "score": 0.2892,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "score": 0.2077,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "score": 0.0871,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 1,
+          "score": 0.0749,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.0563,
+          "relevant": false
+        }
+      ],
+      "citations": [
+        {
+          "label": "S1",
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "chunk_id": "doc_c49734a2301b5b87-00000"
+        },
+        {
+          "label": "S2",
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "chunk_id": "doc_c49734a2301b5b87-00001"
+        }
+      ],
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit@1": true,
+      "evidence_recall@1": 1.0,
+      "hit@3": true,
+      "evidence_recall@3": 1.0,
+      "hit@5": true,
+      "evidence_recall@5": 1.0,
+      "answer_contains_expected": true,
+      "citation_hit": true,
+      "citation_precision": 0.5,
+      "sentence_support_ratio": 1.0
+    },
+    {
+      "id": "q13",
+      "category": "date",
+      "question": "When did Project Helios start, and what is its planned completion date?",
+      "answerable": true,
+      "status": "answered",
+      "answer": "- The approved total budget is 4.2 million euros, and the planned completion date is 30 June 2027. [S1]",
+      "latency_ms": 2,
+      "top1_score": 0.2763,
+      "retrieved": [
+        {
+          "rank": 1,
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "score": 0.2763,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.133,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "score": 0.0815,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.0324,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 2,
+          "score": 0.0228,
+          "relevant": false
+        }
+      ],
+      "citations": [
+        {
+          "label": "S1",
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "chunk_id": "doc_c49734a2301b5b87-00000"
+        }
+      ],
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit@1": true,
+      "evidence_recall@1": 1.0,
+      "hit@3": true,
+      "evidence_recall@3": 1.0,
+      "hit@5": true,
+      "evidence_recall@5": 1.0,
+      "answer_contains_expected": false,
+      "citation_hit": true,
+      "citation_precision": 1.0,
+      "sentence_support_ratio": 1.0
+    },
+    {
+      "id": "q14",
+      "category": "multi_section",
+      "question": "Why was Project Helios over budget in the third quarter?",
+      "answerable": true,
+      "status": "answered",
+      "answer": "- PROJECT HELIOS - QUARTERLY STATUS REPORT [S1]\n- Project Helios installs rooftop solar panels and battery storage at Northwind Logistics warehouses to cut grid electricity costs. [S1]",
+      "latency_ms": 2,
+      "top1_score": 0.1896,
+      "retrieved": [
+        {
+          "rank": 1,
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "score": 0.1896,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "score": 0.0718,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "score": 0.061,
+          "relevant": true
+        },
+        {
+          "rank": 4,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.0502,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 3,
+          "score": 0.034,
+          "relevant": false
+        }
+      ],
+      "citations": [
+        {
+          "label": "S1",
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "chunk_id": "doc_c49734a2301b5b87-00000"
+        }
+      ],
+      "first_relevant_rank": 2,
+      "reciprocal_rank": 0.5,
+      "hit@1": false,
+      "evidence_recall@1": 0.0,
+      "hit@3": true,
+      "evidence_recall@3": 1.0,
+      "hit@5": true,
+      "evidence_recall@5": 1.0,
+      "answer_contains_expected": false,
+      "citation_hit": false,
+      "citation_precision": 0.0,
+      "sentence_support_ratio": 1.0
+    },
+    {
+      "id": "q15",
+      "category": "confusable",
+      "question": "How long is the warranty on the Helios battery storage units?",
+      "answerable": true,
+      "status": "answered",
+      "answer": "- Battery storage has been installed at 4 sites; the battery units are covered by the supplier's 10-year performance warranty, and the solar panels carry a 25-year output warranty. [S1]\n- Project Helios installs rooftop solar panels and battery storage at Northwind Logistics warehouses to cut grid electricity costs. [S2]",
+      "latency_ms": 3,
+      "top1_score": 0.1894,
+      "retrieved": [
+        {
+          "rank": 1,
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "score": 0.1894,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "score": 0.1378,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "score": 0.1123,
+          "relevant": true
+        },
+        {
+          "rank": 4,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 5,
+          "score": 0.1117,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 3,
+          "score": 0.0619,
+          "relevant": false
+        }
+      ],
+      "citations": [
+        {
+          "label": "S1",
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "chunk_id": "doc_c49734a2301b5b87-00001"
+        },
+        {
+          "label": "S2",
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "chunk_id": "doc_c49734a2301b5b87-00000"
+        }
+      ],
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit@1": true,
+      "evidence_recall@1": 1.0,
+      "hit@3": true,
+      "evidence_recall@3": 1.0,
+      "hit@5": true,
+      "evidence_recall@5": 1.0,
+      "answer_contains_expected": true,
+      "citation_hit": true,
+      "citation_precision": 0.5,
+      "sentence_support_ratio": 1.0
+    },
+    {
+      "id": "q16",
+      "category": "date",
+      "question": "What happens if planning permission for the Madrid warehouse is not granted by 31 December 2026?",
+      "answerable": true,
+      "status": "answered",
+      "answer": "- If it is not granted by 31 December 2026, Madrid will be replaced by the Porto warehouse. [S1]\n- Risk 2: Planning permission for the Madrid warehouse is still pending. [S1]",
+      "latency_ms": 2,
+      "top1_score": 0.324,
+      "retrieved": [
+        {
+          "rank": 1,
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "score": 0.324,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "score": 0.1192,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 1,
+          "score": 0.0705,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.0645,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.0438,
+          "relevant": false
+        }
+      ],
+      "citations": [
+        {
+          "label": "S1",
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "chunk_id": "doc_c49734a2301b5b87-00002"
+        }
+      ],
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit@1": true,
+      "evidence_recall@1": 1.0,
+      "hit@3": true,
+      "evidence_recall@3": 1.0,
+      "hit@5": true,
+      "evidence_recall@5": 1.0,
+      "answer_contains_expected": true,
+      "citation_hit": true,
+      "citation_precision": 1.0,
+      "sentence_support_ratio": 1.0
+    },
+    {
+      "id": "q17",
+      "category": "numeric",
+      "question": "What percentage of the approved Helios budget had been spent by 30 September 2026?",
+      "answerable": true,
+      "status": "answered",
+      "answer": "- By 30 September 2026, solar systems were operating at 9 of the 14 warehouses in scope. [S1]\n- The approved total budget is 4.2 million euros, and the planned completion date is 30 June 2027. [S2]",
+      "latency_ms": 3,
+      "top1_score": 0.1354,
+      "retrieved": [
+        {
+          "rank": 1,
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "score": 0.1354,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "score": 0.1307,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 1,
+          "score": 0.0991,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 5,
+          "score": 0.0768,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "score": 0.0731,
+          "relevant": false
+        }
+      ],
+      "citations": [
+        {
+          "label": "S1",
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "chunk_id": "doc_c49734a2301b5b87-00001"
+        },
+        {
+          "label": "S2",
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "chunk_id": "doc_c49734a2301b5b87-00000"
+        }
+      ],
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit@1": true,
+      "evidence_recall@1": 1.0,
+      "hit@3": true,
+      "evidence_recall@3": 1.0,
+      "hit@5": true,
+      "evidence_recall@5": 1.0,
+      "answer_contains_expected": false,
+      "citation_hit": true,
+      "citation_precision": 0.5,
+      "sentence_support_ratio": 1.0
+    },
+    {
+      "id": "q18",
+      "category": "factual",
+      "question": "Which filter part number is the sediment pre-filter, and how often is it replaced?",
+      "answerable": true,
+      "status": "answered",
+      "answer": "- Stage 1 - Sediment pre-filter (part AP-S1): every 6 months. [S1]\n- Purification stages: 4 (sediment pre-filter, activated carbon block, reverse osmosis (RO) membrane, mineral post-filter). [S3]",
+      "latency_ms": 3,
+      "top1_score": 0.2352,
+      "retrieved": [
+        {
+          "rank": 1,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 3,
+          "score": 0.2352,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 4,
+          "score": 0.1669,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 1,
+          "score": 0.1634,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 2,
+          "score": 0.0575,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "score": 0.027,
+          "relevant": false
+        }
+      ],
+      "citations": [
+        {
+          "label": "S1",
+          "file": "aquapure_w300_manual.pdf",
+          "page": 3,
+          "chunk_id": "doc_b9a8c8eb7e42b289-00002"
+        },
+        {
+          "label": "S3",
+          "file": "aquapure_w300_manual.pdf",
+          "page": 1,
+          "chunk_id": "doc_b9a8c8eb7e42b289-00000"
+        }
+      ],
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit@1": true,
+      "evidence_recall@1": 1.0,
+      "hit@3": true,
+      "evidence_recall@3": 1.0,
+      "hit@5": true,
+      "evidence_recall@5": 1.0,
+      "answer_contains_expected": true,
+      "citation_hit": true,
+      "citation_precision": 0.5,
+      "sentence_support_ratio": 1.0
+    },
+    {
+      "id": "u01",
+      "category": "unanswerable",
+      "question": "What is the retail price of the AquaPure W300?",
+      "answerable": false,
+      "status": "answered",
+      "answer": "- AquaPure W300 Under-Sink Water Purifier - User Manual [S1]\n- Thank you for choosing the AquaPure W300, manufactured by Clearwater Appliances Ltd. [S1]\n- AquaPure W300 manual - page 1 [S1]",
+      "latency_ms": 2,
+      "top1_score": 0.2333,
+      "retrieved": [
+        {
+          "rank": 1,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 1,
+          "score": 0.2333,
+          "relevant": null
+        },
+        {
+          "rank": 2,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 3,
+          "score": 0.1698,
+          "relevant": null
+        },
+        {
+          "rank": 3,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 5,
+          "score": 0.1677,
+          "relevant": null
+        },
+        {
+          "rank": 4,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 2,
+          "score": 0.1431,
+          "relevant": null
+        },
+        {
+          "rank": 5,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 4,
+          "score": 0.0888,
+          "relevant": null
+        }
+      ],
+      "citations": [
+        {
+          "label": "S1",
+          "file": "aquapure_w300_manual.pdf",
+          "page": 1,
+          "chunk_id": "doc_b9a8c8eb7e42b289-00000"
+        }
+      ],
+      "answer_contains_expected": null,
+      "citation_hit": null,
+      "citation_precision": null,
+      "sentence_support_ratio": 1.0
+    },
+    {
+      "id": "u02",
+      "category": "unanswerable",
+      "question": "How many vacation days do part-time employees receive?",
+      "answerable": false,
+      "status": "answered",
+      "answer": "- Full-time employees receive 22 days of paid annual leave per calendar year, plus public holidays. [S1]",
+      "latency_ms": 3,
+      "top1_score": 0.2275,
+      "retrieved": [
+        {
+          "rank": 1,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.2275,
+          "relevant": null
+        },
+        {
+          "rank": 2,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.1413,
+          "relevant": null
+        },
+        {
+          "rank": 3,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.1006,
+          "relevant": null
+        },
+        {
+          "rank": 4,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.0726,
+          "relevant": null
+        },
+        {
+          "rank": 5,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 3,
+          "score": 0.0682,
+          "relevant": null
+        }
+      ],
+      "citations": [
+        {
+          "label": "S1",
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "chunk_id": "doc_e95cd9614bdf8dac-00001"
+        }
+      ],
+      "answer_contains_expected": null,
+      "citation_hit": null,
+      "citation_precision": null,
+      "sentence_support_ratio": 1.0
+    },
+    {
+      "id": "u03",
+      "category": "unanswerable",
+      "question": "Who is the chief executive officer of Northwind Logistics?",
+      "answerable": false,
+      "status": "answered",
+      "answer": "- Prepared by the Northwind Logistics Programme Office. [S1]\n- Project Helios installs rooftop solar panels and battery storage at Northwind Logistics warehouses to cut grid electricity costs. [S1]\n- The project sponsor is the Chief Operations Officer, and the project manager is Dana Okafor. [S1]",
+      "latency_ms": 2,
+      "top1_score": 0.1981,
+      "retrieved": [
+        {
+          "rank": 1,
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "score": 0.1981,
+          "relevant": null
+        },
+        {
+          "rank": 2,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.1235,
+          "relevant": null
+        },
+        {
+          "rank": 3,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 4,
+          "score": 0.0395,
+          "relevant": null
+        },
+        {
+          "rank": 4,
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "score": 0.0359,
+          "relevant": null
+        },
+        {
+          "rank": 5,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 2,
+          "score": 0.0251,
+          "relevant": null
+        }
+      ],
+      "citations": [
+        {
+          "label": "S1",
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "chunk_id": "doc_c49734a2301b5b87-00000"
+        }
+      ],
+      "answer_contains_expected": null,
+      "citation_hit": null,
+      "citation_precision": null,
+      "sentence_support_ratio": 1.0
+    },
+    {
+      "id": "u04",
+      "category": "unanswerable",
+      "question": "How much did Project Helios spend in Q1 2026?",
+      "answerable": false,
+      "status": "insufficient_evidence",
+      "answer": "I couldn't find enough information in the uploaded documents to answer this question.",
+      "latency_ms": 3,
+      "top1_score": 0.259,
+      "retrieved": [
+        {
+          "rank": 1,
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "score": 0.259,
+          "relevant": null
+        },
+        {
+          "rank": 2,
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "score": 0.1011,
+          "relevant": null
+        },
+        {
+          "rank": 3,
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "score": 0.0577,
+          "relevant": null
+        },
+        {
+          "rank": 4,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 1,
+          "score": 0.0448,
+          "relevant": null
+        },
+        {
+          "rank": 5,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.0442,
+          "relevant": null
+        }
+      ],
+      "citations": []
+    },
+    {
+      "id": "u05",
+      "category": "unanswerable",
+      "question": "What is the capital city of Australia?",
+      "answerable": false,
+      "status": "insufficient_evidence",
+      "answer": "I couldn't find enough information in the uploaded documents to answer this question.",
+      "latency_ms": 2,
+      "top1_score": 0.0213,
+      "retrieved": [
+        {
+          "rank": 1,
+          "file": "project_helios_status_report.txt",
+          "page": null,
+          "score": 0.0213,
+          "relevant": null
+        },
+        {
+          "rank": 2,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 1,
+          "score": 0.0,
+          "relevant": null
+        },
+        {
+          "rank": 3,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 4,
+          "score": 0.0,
+          "relevant": null
+        },
+        {
+          "rank": 4,
+          "file": "aquapure_w300_manual.pdf",
+          "page": 5,
+          "score": 0.0,
+          "relevant": null
+        },
+        {
+          "rank": 5,
+          "file": "northwind_employee_handbook.txt",
+          "page": null,
+          "score": 0.0,
+          "relevant": null
+        }
+      ],
+      "citations": []
+    }
+  ]
+}

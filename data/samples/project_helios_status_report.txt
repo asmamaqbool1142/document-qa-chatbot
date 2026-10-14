@@ -1,0 +1,22 @@
+PROJECT HELIOS - QUARTERLY STATUS REPORT
+Prepared by the Northwind Logistics Programme Office. Fictional sample data.
+
+1. PROJECT SUMMARY
+Project Helios installs rooftop solar panels and battery storage at Northwind Logistics warehouses to cut grid electricity costs. The project started on 3 February 2025. The approved total budget is 4.2 million euros, and the planned completion date is 30 June 2027. The project sponsor is the Chief Operations Officer, and the project manager is Dana Okafor.
+
+2. Q2 2026 RESULTS
+In the second quarter of 2026 (April to June), solar installations were completed at 3 warehouses: Rotterdam, Antwerp and Lyon. Q2 spending was 610,000 euros. The installed systems generated 1,450 megawatt-hours (MWh) of electricity during Q2 and avoided an estimated 520 tonnes of CO2 emissions. Grid electricity costs at the converted sites fell by 18 percent compared with Q2 2025.
+
+3. Q3 2026 RESULTS
+In the third quarter of 2026 (July to September), installations were completed at 2 more warehouses: Hamburg and Milan. Q3 spending was 740,000 euros, which was 60,000 euros above the quarterly plan because of scaffolding delays in Hamburg. The systems generated 2,100 megawatt-hours (MWh) during Q3 and avoided an estimated 760 tonnes of CO2 emissions. Grid electricity costs at the converted sites fell by 23 percent compared with Q3 2025.
+
+4. CUMULATIVE PROGRESS
+By 30 September 2026, solar systems were operating at 9 of the 14 warehouses in scope. Cumulative spending reached 2.9 million euros, which is 69 percent of the approved budget. Battery storage has been installed at 4 sites; the battery units are covered by the supplier's 10-year performance warranty, and the solar panels carry a 25-year output warranty.
+
+5. RISKS AND ISSUES
+Risk 1: Rising steel prices may increase mounting-frame costs by up to 8 percent. Mitigation: frames for the remaining sites were pre-ordered in August 2026.
+Risk 2: Planning permission for the Madrid warehouse is still pending. If it is not granted by 31 December 2026, Madrid will be replaced by the Porto warehouse.
+Issue 1: Scaffolding delays in Hamburg caused the Q3 overspend described in section 3.
+
+6. NEXT QUARTER (Q4 2026)
+Installations are planned at Gdansk and Vienna. The Q4 budget is 520,000 euros. The programme board will review the business case for a second phase, covering electric delivery-van charging, at its meeting on 15 January 2027.

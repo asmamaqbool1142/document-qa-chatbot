@@ -1,0 +1,29 @@
+NORTHWIND LOGISTICS - EMPLOYEE HANDBOOK (2026 EDITION)
+This is a fictional handbook created as sample data for the RAG Knowledge Assistant.
+
+SECTION 1: WORKING HOURS
+Standard working hours at Northwind Logistics are 09:00 to 17:30, Monday to Friday, including a 45-minute unpaid lunch break. Core collaboration hours, when all office-based staff are expected to be available, are 10:00 to 15:00. Warehouse teams work rotating shifts that are published every Friday for the following two weeks.
+
+SECTION 2: REMOTE WORK
+Employees in office-based roles may work remotely for up to 3 days per week after completing their probation period. Remote work must be agreed with the line manager and recorded in the HR portal. Employees working remotely must use the company VPN and must not work from public Wi-Fi networks without it. Warehouse and fleet roles are not eligible for remote work.
+
+SECTION 3: PROBATION
+All new employees complete a probation period of 90 days. A formal review meeting takes place in the final two weeks of probation. During probation the notice period on either side is 1 week; after probation it increases to 4 weeks.
+
+SECTION 4: ANNUAL LEAVE
+Full-time employees receive 22 days of paid annual leave per calendar year, plus public holidays. After 5 full years of service, the entitlement increases to 25 days. Up to 5 unused days may be carried over into the next year, but carried-over days must be used by 31 March or they are lost. Leave requests of more than 10 consecutive working days require approval at least 6 weeks in advance.
+
+SECTION 5: PARENTAL LEAVE
+Birth parents are entitled to 16 weeks of parental leave at full pay. Non-birth parents and adoptive parents receive 6 weeks at full pay. Parental leave can start up to 2 weeks before the expected due date. Employees should notify HR at least 8 weeks before they intend to start parental leave.
+
+SECTION 6: SICK LEAVE
+Employees must notify their manager before 09:30 on each day of sickness absence. A doctor's certificate is required for absences longer than 3 consecutive working days. Paid sick leave is provided for up to 20 working days per year.
+
+SECTION 7: EXPENSES
+Business expenses must be submitted through the finance portal within 30 days of being incurred, together with an itemised receipt. Claims submitted after 30 days require written approval from a department director. Reimbursement is paid with the next monthly salary. The daily meal allowance for business travel is 40 euros; alcohol is never reimbursable. Economy class must be used for all flights shorter than 6 hours.
+
+SECTION 8: IT AND SECURITY
+Passwords must be at least 14 characters long and must be changed every 180 days. Multi-factor authentication is mandatory for email, the HR portal and the finance portal. Lost or stolen laptops and phones must be reported to the IT service desk within 2 hours of discovery. Company data must never be stored on personal USB drives.
+
+SECTION 9: TRAINING
+Each employee has an annual learning budget of 1,200 euros for courses, books and conferences. Training requests above 500 euros need line-manager approval. Mandatory security awareness training must be completed every year by 30 September.

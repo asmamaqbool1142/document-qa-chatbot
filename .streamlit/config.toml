@@ -1,0 +1,10 @@
+[server]
+# Keep in line with MAX_UPLOAD_MB on the backend (the backend enforces the real limit).
+maxUploadSize = 20
+headless = true
+
+[browser]
+gatherUsageStats = false
+
+[theme]
+primaryColor = "#2f6fdd"
